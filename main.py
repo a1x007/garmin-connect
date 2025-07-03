@@ -51,8 +51,8 @@ def login_status():
 @app.get("/username")
 def get_username():
     try:
-        profile = safe_garmin_call(garmin_client.get_user_profile)
-        return {"username": profile.get("displayName")}
+        profile = safe_garmin_call(garmin_client.get_full_name)
+        return {"username": profile}
     except Exception as e:
         return {"error": str(e)}
 

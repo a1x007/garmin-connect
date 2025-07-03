@@ -6,7 +6,7 @@ import os
 app = FastAPI()
 
 @app.get("/")
-def read_root():
+async def root():
     return {"message": "Garmin FastAPI is running!"}
 
 @app.get("/steps")

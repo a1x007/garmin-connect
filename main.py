@@ -63,7 +63,6 @@ def get_username():
 def get_username():
     try:
         profile = safe_garmin_call(garmin_client.get_user_profile)
-        logging.info(f"Profile data: {profile}")
         full_name = profile.get("fullName") or profile.get("displayName") or "Unknown"
         return {"username": full_name, "profile_keys": list(profile.keys()), "profile": profile}
     except Exception as e:
